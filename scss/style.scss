@@ -1,0 +1,400 @@
+@import url("https://fonts.googleapis.com/css2?family=Antonio:wght@100..700&family=League+Spartan:wght@100..900&display=swap");
+
+@import "./reset";
+@import "./variables";
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Antonio", sans-serif;
+}
+body {
+  background: url("../img/body-bg.png");
+  background-color: #070724;
+  color: #fff;
+  font-family: "League Spartan", sans-serif;
+}
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 32px;
+  border-bottom: 1px solid #ffffff33;
+  user-select: none;
+  height: 85px;
+  .logo {
+    font-size: 28px;
+    font-weight: 400;
+    letter-spacing: -1.05px;
+    text-transform: uppercase;
+    line-height: normal;
+    cursor: pointer;
+  }
+  ul {
+    display: flex;
+    gap: 33px;
+    align-items: center;
+    li {
+      font-size: 14px;
+      font-weight: 600;
+      line-height: 25px;
+      letter-spacing: 1.4px;
+      text-transform: uppercase;
+      opacity: 0.75;
+      cursor: pointer;
+      position: relative;
+      &::before {
+        content: "";
+        top: -30px;
+        width: 100%;
+        height: 4px;
+        background: var(--clr);
+      }
+    }
+    .li-moused {
+      &::before {
+        position: absolute;
+      }
+    }
+  }
+  .menu,
+  .nav-tabs_mob {
+    display: none;
+  }
+}
+.planet-container {
+  max-width: 1210px;
+  margin: 50px auto 0;
+  display: flex;
+  flex-direction: column;
+  .planet-con_top {
+    display: flex;
+    height: 667px;
+    width: 90%;
+    margin: 0 auto;
+    align-items: center;
+    .planet-pic {
+      display: flex;
+      justify-content: center;
+      width: 100%;
+    }
+    .planet-content {
+      max-width: 350px;
+      display: flex;
+      gap: 24px;
+      flex-direction: column;
+      h2 {
+        font-size: 80px;
+        font-weight: 400;
+        text-transform: uppercase;
+        margin-bottom: 23px;
+      }
+      p {
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 25px;
+        opacity: 0.5;
+      }
+      .planet-content_dsc {
+        margin-bottom: 24px;
+      }
+      .source {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        a {
+          color: inherit;
+        }
+      }
+      .change-content {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        div {
+          border: 1px solid #ffffff33;
+          background: transparent;
+          padding: 12px 28px;
+          outline: none;
+          cursor: pointer;
+          display: flex;
+          gap: 28px;
+          align-items: center;
+          span {
+            font-size: 12px;
+            font-weight: 700;
+            line-height: 25px; /* 208.333% */
+            letter-spacing: 2.571px;
+            opacity: 0.5;
+          }
+          p {
+            font-size: 12px;
+            font-weight: 700;
+            line-height: 25px; /* 208.333% */
+            letter-spacing: 2.571px;
+            text-transform: uppercase;
+            opacity: 1;
+          }
+          &:hover {
+            background: #d8d8d848;
+          }
+        }
+        .change_btn--clicked {
+          background: var(--clr);
+          &:hover {
+            background: var(--clr);
+          }
+        }
+      }
+    }
+  }
+  .planet-facts {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    margin-bottom: 60px;
+    div {
+      max-width: 255px;
+      width: 100%;
+      height: 88px;
+      padding: 20px 23px 27px;
+      border: 1px solid #ffffff33;
+      h2 {
+        color: #fff;
+        font-size: 40px;
+        font-weight: 300;
+        letter-spacing: -1.5px;
+        text-transform: uppercase;
+      }
+      p {
+        color: #fff;
+        font-size: 11px;
+        font-weight: 700;
+        line-height: 25px; /* 227.273% */
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        opacity: 0.5;
+        margin-bottom: 4px;
+      }
+    }
+  }
+  .change-content_mob {
+    display: none;
+  }
+}
+
+@media (max-width: 1225px) {
+  .nav {
+    flex-direction: column;
+    padding: 30px;
+    gap: 40px;
+    ul {
+      li {
+        font-size: 11px;
+      }
+    }
+  }
+  .planet-container {
+    max-width: 688px;
+    .planet-con_top {
+      flex-direction: column;
+      align-items: stretch;
+      gap: 95px;
+      width: 100%;
+      .planet-content {
+        flex-direction: row;
+        justify-content: space-between;
+        max-width: 100%;
+        div {
+          h2 {
+            font-size: 48px;
+            margin-bottom: 24px;
+          }
+          p {
+            font-size: 11px;
+            margin-bottom: 30px;
+          }
+        }
+        .change-content {
+          gap: 16px;
+          justify-content: center;
+          div {
+            width: 281px;
+            padding: 8px 20px;
+            max-height: 25px;
+            p {
+              margin-bottom: 0;
+            }
+          }
+        }
+      }
+      .planet-pic {
+        img {
+          max-width: var(--max-w-tablet);
+        }
+      }
+    }
+    .planet-facts {
+      div {
+        height: auto;
+        max-height: 88px;
+        padding: 12px 15px;
+        h2 {
+          font-size: 20px;
+        }
+        p {
+          font-size: 7px;
+          line-height: 16px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 700px) {
+  .nav {
+    flex-direction: row;
+    padding: 16px 24px;
+    height: auto;
+    align-items: center;
+    .logo {
+      font-size: 28px;
+    }
+    ul {
+      display: none;
+    }
+    .menu {
+      display: block;
+    }
+  }
+  .planet-container {
+    margin: 0 auto;
+    max-width: 327px;
+    .planet-con_top {
+      .planet-pic {
+        margin-top: 95px;
+        img {
+          max-width: var(--max-w-mob);
+        }
+      }
+      .planet-content {
+        text-align: center;
+        .planet-title {
+          font-size: 40px;
+        }
+        .change-content {
+          display: none;
+        }
+        div {
+          .source {
+            justify-content: center;
+          }
+        }
+      }
+    }
+    .change-content_mob {
+      width: 100vw;
+      border-bottom: 1px solid #ffffff33;
+      position: absolute;
+      right: 0;
+      top: 70px;
+      left: 0;
+      z-index: 10;
+      display: block;
+      div {
+        display: flex;
+        justify-content: space-between;
+        max-width: 310px;
+        margin: 0 auto;
+        div {
+          font-size: 9px;
+          font-weight: 700;
+          letter-spacing: 1.929px;
+          text-transform: uppercase;
+          padding: 20px 0 17px;
+          border-bottom: 4px solid transparent;
+        }
+        .change_btn--clicked {
+          border-bottom: 4px solid var(--clr);
+        }
+      }
+    }
+
+    .planet-facts {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 8px;
+      div {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        h2 {
+          font-size: 20px;
+        }
+      }
+    }
+  }
+}
+
+.show-menu {
+  .nav {
+    .nav-tabs_mob {
+      display: flex;
+      position: absolute;
+      width: 100%;
+      top: 65px;
+      left: 0;
+      height: auto;
+      flex-direction: column;
+      z-index: 100;
+      align-items: start;
+      padding: 44px 0;
+      background: #070724;
+      div {
+        border-bottom: 1px solid #ffffff33;
+        display: flex;
+        width: 80%;
+        margin: 0 auto;
+        align-items: center;
+        padding: 20px;
+      }
+      li {
+        font-size: 15px;
+        font-weight: 700;
+        line-height: 25px; /* 166.667% */
+        letter-spacing: 1.364px;
+        opacity: 1;
+        width: 100%;
+        position: relative;
+        margin-left: 24px;
+      }
+      .planet-circle {
+        display: block;
+        width: 24px;
+        height: 20px;
+        border-radius: 50%;
+      }
+    }
+  }
+}
+
+.hide {
+  display: none;
+}
+.loading-div {
+  display: none;
+}
+.loading {
+  .loading-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 90vh;
+  }
+  .planet-container{
+    display: none;
+  }
+}
